@@ -1,0 +1,11 @@
+td.cap {font-weight:bold;}
+
+.links a {
+	display:block;float:left;width:auto;min-width:32px;;height:60px;margin-left:20px;font-size:10px;line-height:80px;text-align:center;
+}
+.links a.wiki {background-image : url("http://kandidaten2013.de/images/piratenwiki.png"); background-repeat : no-repeat; background-position: top center; }
+.links a.awatch {background-image : url("http://kandidaten2013.de/images/abgeordnetenwatch.png"); background-repeat : no-repeat; background-position: top center; }
+.links a.website {background-image : url("http://kandidaten2013.de/images/website.png"); background-repeat : no-repeat; background-position: top center; }
+.links a.facebook {background-image : url("http://kandidaten2013.de/images/facebook.png"); background-repeat : no-repeat; background-position: top center; }
+.links a.twitter {background-image : url("http://kandidaten2013.de/images/twitter.png"); background-repeat : no-repeat; background-position: top center; }
+.links a.googleplus {background-image : url("http://kandidaten2013.de/images/googleplus.png"); background-repeat : no-repeat; background-position: top center; }
