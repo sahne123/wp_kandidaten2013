@@ -61,6 +61,10 @@ class kandidaten_Widget extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 			
+			if($instance['ID'] == 0)
+			{
+				$instance['ID'] = rand(1, 260);
+			}
 			if( $websitecontent = @file("http://www.kandidaten2013.de/kandidaten/ws".$instance['ID']) )
 			{
 				echo join("", $websitecontent);
