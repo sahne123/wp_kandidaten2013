@@ -61,15 +61,36 @@ class kandidaten_Widget extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 			
-			if($instance['ID'] == 0)
+			if(is_numeric($instance['number']) && $instance['number'] > 0 )
 			{
-				$instance['ID'] = rand(1, 260);
-			}
-			if( $websitecontent = @file("http://www.kandidaten2013.de/kandidaten/ws".$instance['ID']) )
-			{
-				echo join("", $websitecontent);
-			}	
+				if(strpos($instance['ID'], ",") == FALSE)
+				{
+					$IDs = array( $instance['ID'] );
+				} else {
+					$IDs = explode(",", $instance['ID']);
+				}
 
+				if(count($IDs) > $instance['number']) {
+					shuffle($IDs);
+					$o = array_slice($IDs, 0, $instance['number']);
+				} else {
+					$o = $IDs;
+				}
+				
+				foreach($o AS $id)
+				{
+					$id = trim($id);
+					if( !(is_numeric($id) && $id > 0 ) )
+					{
+						$id = rand(1, 260);
+					}
+					
+					if( $websitecontent = @file("http://www.kandidaten2013.de/kandidaten/ws".$id) )
+					{
+						echo join("", $websitecontent);
+					}
+				}
+			}
 		echo $after_widget;
 	}
 
@@ -80,13 +101,14 @@ class kandidaten_Widget extends WP_Widget {
 
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['ID'] = strip_tags( $new_instance['ID'] );
+		$instance['number'] = strip_tags( $new_instance['number'] );
 
 		return $instance;
 	}
 
 	function form($instance) {
 		// Formular des Widgets im Backend
-		$default_settings = array( 'title' => 'Unsere Kandidaten', 'ID' => '0' );
+		$default_settings = array( 'title' => 'Unsere Kandidaten', 'ID' => '0', 'number' => '1' );
 		$instance = wp_parse_args( (array) $instance, $default_settings ); 
 
 		?>
@@ -95,9 +117,14 @@ class kandidaten_Widget extends WP_Widget {
 			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:100%;" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'ID' ); ?>">Kandidaten-ID (0=zufällig):</label>
+			<label for="<?php echo $this->get_field_id( 'number' ); ?>">Anzahl angezeigter Kandidaten</label>
+			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" value="<?php echo $instance['number']; ?>" style="width:100%;" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'ID' ); ?>">Kandidaten-IDs. Komma getrennt. Falls mehr IDs als anzuzeigende Kandidaten angegeben werden entscheidet der Zufall. (ID 0 = zufälliger Kandidat aus Bayern):</label>
 			<input id="<?php echo $this->get_field_id( 'ID' ); ?>" name="<?php echo $this->get_field_name( 'ID' ); ?>" value="<?php echo $instance['ID']; ?>" style="width:100%;" />
 		</p>
+		
 		<?php
 		
 	}
