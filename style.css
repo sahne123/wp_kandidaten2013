@@ -24,36 +24,39 @@
 	font-weight: bold;
 }
 
-.kandidaten_detail .links {
+.kandidaten_detail .vorstellung .links {
 	height: 60px;
 }
-.kandidaten_detail .links a {
+.kandidaten_detail .vorstellung  .links a {
 	display:block;float:left;width:auto;min-width:32px;;height:60px;margin-left:20px;font-size:10px;line-height:80px;text-align:center;
 }
-.kandidaten_detail .links a.wiki {background-image : url("http://kandidaten2013.de/images/piratenwiki.png"); background-repeat : no-repeat; background-position: top center; }
-.kandidaten_detail .links a.awatch {background-image : url("http://kandidaten2013.de/images/abgeordnetenwatch.png"); background-repeat : no-repeat; background-position: top center; }
-.kandidaten_detail .links a.website {background-image : url("http://kandidaten2013.de/images/website.png"); background-repeat : no-repeat; background-position: top center; }
-.kandidaten_detail .links a.facebook {background-image : url("http://kandidaten2013.de/images/facebook.png"); background-repeat : no-repeat; background-position: top center; }
-.kandidaten_detail .links a.twitter {background-image : url("http://kandidaten2013.de/images/twitter.png"); background-repeat : no-repeat; background-position: top center; }
-.kandidaten_detail .links a.googleplus {background-image : url("http://kandidaten2013.de/images/googleplus.png"); background-repeat : no-repeat; background-position: top center; }
+.kandidaten_detail .vorstellung  .links a.wiki {background-image : url("http://kandidaten2013.de/images/piratenwiki.png"); background-repeat : no-repeat; background-position: top center; }
+.kandidaten_detail .vorstellung  .links a.awatch {background-image : url("http://kandidaten2013.de/images/abgeordnetenwatch.png"); background-repeat : no-repeat; background-position: top center; }
+.kandidaten_detail .vorstellung  .links a.website {background-image : url("http://kandidaten2013.de/images/website.png"); background-repeat : no-repeat; background-position: top center; }
+.kandidaten_detail .vorstellung  .links a.facebook {background-image : url("http://kandidaten2013.de/images/facebook.png"); background-repeat : no-repeat; background-position: top center; }
+.kandidaten_detail .vorstellung  .links a.twitter {background-image : url("http://kandidaten2013.de/images/twitter.png"); background-repeat : no-repeat; background-position: top center; }
+.kandidaten_detail .vorstellung  .links a.googleplus {background-image : url("http://kandidaten2013.de/images/googleplus.png"); background-repeat : no-repeat; background-position: top center; }
 
 .kandidaten_widget {
 	clear:both;
-	height: 85px;
+	min-height: 85px;
+}
+
+.kandidaten_widget h3, .kandidaten_widget h4 {
+	margin: 5px 0;
+	margin-top: 5px;
+}
+.kandidaten_widget img {
+	width:60px;
+	float:left;
+	margin-right:10px;
 }
 
 
 .kandidaten_widget a, .kandidaten_widget a:visited, .kandidaten_widget a:active, .kandidaten_widget a:hover {
-	color: inherit;
-	padding: 0px;
+	color: white;
+	padding: 5px;
 	text-decoration:none;
-}
-.kandidaten_widget a h3, .kandidaten_widget a h4 {
-	margin-bottom:0;
-	margin-top: 5px;
-}
-.kandidaten_widget a img {
-	width:60px;
-	float:left;
-	margin-right:10px;
+	background: #ff7f00;
+	display:inline-block;
 }
