@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Kandidaten2013
-Plugin URI: 
-Description: Wordpress Plugin zum Einbinden von Kandidaten-Daten aus kandidaten2013.de
+Plugin URI: http://zeit-zu-handeln.net/?p=887
+Description: Wordpress Plugin zum Einbinden von Kandidaten-Daten aus kandidaten2013.de. Hinweise zur Benutzung siehe <a href="http://zeit-zu-handeln.net/?p=887" >http://zeit-zu-handeln.net/?p=887</a>.
 Version: 0.9 BETA
 Author: @sahne123
-Author URI: 
+Author URI: http://zeit-zu-handeln.net
 */
 
 // Uncomment for assistance from WordPress in debugging.
@@ -121,7 +121,7 @@ class kandidaten_Widget extends WP_Widget {
 			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" value="<?php echo $instance['number']; ?>" style="width:100%;" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'ID' ); ?>">Kandidaten-IDs. Komma getrennt. Falls mehr IDs als anzuzeigende Kandidaten angegeben werden entscheidet der Zufall. (ID 0 = zufälliger Kandidat aus Bayern):</label>
+			<label for="<?php echo $this->get_field_id( 'ID' ); ?>">Kandidaten-IDs. Komma getrennt. Falls mehr IDs als anzuzeigende Kandidaten angegeben werden entscheidet der Zufall. ID 0 = zufälliger Kandidat aus Bayern. IDs siehe hier <a href="http://kandidaten2013.de/liste.html" target="_blank" >http://kandidaten2013.de/liste.html</a>:</label>
 			<input id="<?php echo $this->get_field_id( 'ID' ); ?>" name="<?php echo $this->get_field_name( 'ID' ); ?>" value="<?php echo $instance['ID']; ?>" style="width:100%;" />
 		</p>
 		
