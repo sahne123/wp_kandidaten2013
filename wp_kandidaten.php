@@ -22,7 +22,7 @@ class wp_kandidaten {
 	
 	// Add Styles of Plugin
 	function kandidaten_styles() {
-		$url_css = plugins_url(). '/wp_kandidaten/style.css';
+		$url_css = plugins_url(). '/wp_kandidaten2013/style.css';
 		echo "<link rel='stylesheet' type='text/css' href='" . $url_css . "' />\n";	
 	}
 	
